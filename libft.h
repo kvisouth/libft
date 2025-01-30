@@ -6,7 +6,7 @@
 /*   By: kevisout <kevisout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 12:19:08 by kevisout          #+#    #+#             */
-/*   Updated: 2024/12/27 18:16:01 by kevisout         ###   ########.fr       */
+/*   Updated: 2025/01/10 13:25:08 by kevisout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
+
+/* DEBUG */
 # include <stdio.h>
 # include <string.h>
-# include <fcntl.h>
-# include <limits.h>
-# include <stdarg.h>
-# include <stdbool.h>
 
 /* BUFFER_SIZE FOR GNL */
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1000
 # endif
 
 /* LINKED LIST DATA STRUCTURE */
@@ -39,7 +37,6 @@ typedef struct s_list
 
 /* MEMORY FUNCTIONS */
 void	*ft_calloc(size_t nmemb, size_t size);
-void	*ft_realloc(void *ptr, size_t size);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
@@ -77,6 +74,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strtok(char *str, char *delim);
 
 /* PTR ON FUNCTIONS */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -95,13 +93,5 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 /* GET_NEXT_LINE */
 char	*get_next_line(int fd);
-
-/* FT_PRINTF */
-int		ft_printf(const char *str, ...);
-int		ft_putchar(char c);
-int		ft_putstr(char *str);
-int		ft_putnbr(long int nb);
-int		ft_putptr(unsigned long ptr);
-int		ft_puthex(unsigned long nb, char x);
 
 #endif
